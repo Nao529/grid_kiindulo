@@ -8,16 +8,7 @@ nav ul {
     /* ne legyen felsorolásjel */
     margin: 0;
     padding: 0;
-    display: grid;
-    /* GRID használata */
-    grid-auto-flow: column;
-    /* egymás mellé kerüljenek */
-    justify-content: center;
-    /* középre igazítás vízszintesen */
-    align-items: center;
-    /* középre igazítás függőlegesen */
-    gap: 20px;
-    /* távolság a menüpontok között */
+    
     transition: background-color 0.3s ease;
 }
 
@@ -62,11 +53,10 @@ article {
 main {
     max-width:1000px;
     display:grid;
-    grid-template-columns: 4fr 1fr;
-    grid-template-areas: "h h"
-                        "n n"
-                        "ar as"
-                        "f f";
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas: "h h h"
+                        "as ar n"
+                        "f f f";
 }
 header{
     grid-area:h
