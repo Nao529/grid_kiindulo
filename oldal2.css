@@ -1,0 +1,123 @@
+/* nav */
+nav ul {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: gray;
+    gap: 20px;
+}
+nav li {
+    padding: 10px 20px;
+    text-align: center;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+nav li:hover {
+    background-color: rgb(225, 25, 25);
+}
+nav li:hover a {
+    color: rgb(234, 214, 149);
+}
+
+/* main */
+main {
+    display: grid;
+    grid-template-areas:
+        "he he"
+        "na na"
+        "ar as"
+        "fo fo";
+    grid-template-columns: 1fr 250px;
+    gap: 25px;
+    padding: 10px;
+}
+
+/* cikkek */
+article {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
+    justify-content: space-evenly;
+    align-items: stretch; 
+    gap: 25px; 
+}
+.cikk {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    background-color: #f3f3f3;
+    border: 1px solid gray;
+    box-sizing: border-box;
+    padding: 15px;
+    row-gap: 15px;
+    margin: 0px 20px 0px 20px;
+}
+.cikk img {
+    width: 100%;
+    border-radius: 5px;
+    grid-row: 1;
+}
+.cikk h2 {
+    grid-row: 2;
+    margin: 5px 0;
+}
+.cikk p, .cikk span {
+    grid-row: 3;
+    margin: 0;
+}
+
+/* aside */
+aside {
+    background-color: #f9f9f9;
+    border: 1px solid gray;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* reszponzivitas */
+@media screen and (max-width: 900px) {
+    main {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "he"
+            "na"
+            "ar"
+            "as"
+            "fo";
+    }
+    article {
+        grid-template-columns: 1fr;
+        justify-content: space-around;
+        gap: 20px;
+        align-items: stretch;
+    }
+    nav ul {
+        grid-auto-flow: row;
+        justify-items: center;
+        gap: 15px;
+    }
+    nav li {
+        margin: 5px 0;
+    }
+}
+
+/* gridek */
+header {
+    grid-area: he;
+}
+nav {
+    grid-area: na;
+}
+article {
+    grid-area: ar;
+}
+aside {
+    grid-area: as;
+}
+footer {
+    grid-area: fo;
+}
